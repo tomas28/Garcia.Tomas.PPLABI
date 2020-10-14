@@ -1,0 +1,65 @@
+# depslib dependency file v1.0
+1602686339 source:c:\users\patri\desktop\garcia.tomas.parcial1\marca.c
+	<stdio.h>
+	<stdlib.h>
+	"fecha.h"
+	"marca.h"
+	"marca.h"
+	"servicios.h"
+	"tipo.h"
+	"trabajo.h"
+
+1602683711 c:\users\patri\desktop\garcia.tomas.parcial1\fecha.h
+
+1602686262 c:\users\patri\desktop\garcia.tomas.parcial1\marca.h
+
+1602686077 c:\users\patri\desktop\garcia.tomas.parcial1\notebook.h
+	"tipo.h"
+
+1602687185 c:\users\patri\desktop\garcia.tomas.parcial1\servicios.h
+
+1602686583 c:\users\patri\desktop\garcia.tomas.parcial1\tipo.h
+
+1602684115 c:\users\patri\desktop\garcia.tomas.parcial1\trabajo.h
+
+1602686457 source:c:\users\patri\desktop\garcia.tomas.parcial1\tipo.c
+	<stdio.h>
+	<stdlib.h>
+	"fecha.h"
+	"tipo.h"
+	"notebook.h"
+	"servicios.h"
+	"tipo.h"
+	"trabajo.h"
+
+1602687297 source:c:\users\patri\desktop\garcia.tomas.parcial1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"marca.h"
+	"notebook.h"
+	"servicios.h"
+	"tipo.h"
+	"trabajo.h"
+	<string.h>
+
+1602686339 source:c:\users\patri\desktop\garcia.tomas.parcial1\notebook.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fecha.h"
+	"marca.h"
+	"notebook.h"
+	"servicios.h"
+	"tipo.h"
+	"trabajo.h"
+
+1602687014 source:c:\users\patri\desktop\garcia.tomas.parcial1\servicios.c
+	<stdio.h>
+	<stdlib.h>
+	"fecha.h"
+	"tipo.h"
+	"notebook.h"
+	"servicios.h"
+	"tipo.h"
+	"trabajo.h"
+
