@@ -38,15 +38,6 @@ void altaNotebook(enotebook notebook[],int tam){
     int i;
     i= buscarNotebookLibre(notebook,tam);
     if(i!=-1){
-        printf("ingrese una ID : ");
-        fflush(stdin);
-        scanf("%d",&notebook[i].id);
-
-         while(notebook[i].id < 0 ){
-            printf("ingrese una ID positiva\n");
-            fflush(stdin);
-            scanf("%d",&notebook[i].id);
-        }
         printf("ingrese un modelo: ");
         fflush(stdin);
         gets(notebook[i].modelo);
@@ -69,7 +60,7 @@ void altaNotebook(enotebook notebook[],int tam){
             scanf("%f",&notebook[i].precio);
         }
 
-        printf("ingrese la ID de tipo:\n\n 5000) Compaq\n 5001) Asus\n 5002) Acer\n 5003) HP\n ");
+        printf("ingrese la ID de tipo:\n\n 5000) Gamer,\n 5001) Disenio,\n 5002) Ultrabook,\n 5003) Normalita\n ");
         fflush(stdin);
         scanf("%d",&notebook[i].idTipo);
 
@@ -78,7 +69,7 @@ void altaNotebook(enotebook notebook[],int tam){
             fflush(stdin);
             scanf("%d",&notebook[i].idTipo);
         }
-
+        notebook[i].id=i+1;
         notebook[i].isEmpty=0;
 
     }
@@ -139,7 +130,7 @@ int notebookModificar(enotebook* notebook, int tam, etipo tipo[], int tamT)
                 switch(opcion)
                 {
                     case 'a':
-                        printf("ingrese el nuevo ID de orquesta: ");
+                        printf("ingrese el nuevo ID de tipo: ");
                         scanf("%d",&notebook[posicion].idTipo);
 
                         while(verificarIdTipo(tipo , TAMT, notebook[i].idTipo )== -1){
@@ -205,11 +196,11 @@ int notebookBaja(enotebook notebook[], int tam)
 
     if(notebook!=NULL && tam>0)
     {
-        printf("ingrese la id que se busca");
+        printf("ingrese la id que se busca\n");
         scanf("%d",&idNo);
         if(notebookBuscarID(notebook,tam,idNo,&posicion)==-1)
         {
-            printf("\nNo existe este ID");
+            printf("\nNo existe este ID\n");
         }
         else
         {
@@ -244,4 +235,25 @@ int notebookListarTodos(enotebook notebook[], int tam)
         retorno=0;
     }
     return retorno;
+}
+int verificarIdNotebook(enotebook notebook[], int tam, int id){
+    int retorno=-1;
+        for(int i = 0; i < tam; i++ ){
+            if(notebook[i].id == id && notebook[i].isEmpty!=1){
+                retorno = 0;
+            }
+        }
+    return retorno;
+}
+int verificarArray(enotebook notebook[], int tam){
+
+    int contador = 0;
+
+    for(int i = 0; i < tam; i++ ){
+        if(notebook[i].isEmpty == 0){
+            contador++;
+        }
+    }
+    return contador;
+
 }

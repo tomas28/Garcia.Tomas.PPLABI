@@ -1,3 +1,5 @@
+#ifndef NOTEBOOK_L_H
+#define NOTEBOOK_L_H
 #include "tipo.h"
 typedef struct{
 
@@ -8,6 +10,7 @@ typedef struct{
     int idTipo;
     int isEmpty;
 }enotebook;
+#endif//NOTEBOOK_H
 
 void inicializarNotebook(enotebook* notebook,int tam);
 int buscarNotebookLibre(enotebook* notebook, int tam);
@@ -17,3 +20,5 @@ int notebookModificar(enotebook* notebook, int tam, etipo tipo[], int tamT);
 int notebookListar(enotebook notebook[], int tam);
 int notebookBaja(enotebook notebook[], int tam);
 int notebookListarTodos(enotebook notebook[], int tam);
+int verificarIdNotebook(enotebook notebook[], int tam, int id);
+int verificarArray(enotebook notebook[], int tam);

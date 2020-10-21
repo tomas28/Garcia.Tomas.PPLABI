@@ -4,9 +4,12 @@
 #include "notebook.h"
 #include "servicios.h"
 #include "tipo.h"
+#include "fecha.h"
 #include "trabajo.h"
+#include "informes.h"
 #include <string.h>
 #define TAMN 1000
+#define TAMTR 1000
 #define TAMT 4
 #define TAMMA 4
 #define TAMS 4
@@ -14,23 +17,27 @@
 int main()
 {
     char seguir;
-
+    int idTrabajador=0;
     enotebook notebook[TAMN];
     etipo tipo[TAMT];
     emarca marca[TAMMA];
     eservicios servicio[TAMS];
+    etrabajo trabajo[TAMTR];
+
 
     int flag=0;
 
 
     inicializarNotebook(notebook,TAMN);
+    inicializarTrabajo(trabajo,TAMTR);
     hardcodearTipo(tipo,TAMT);
     hardcodearMarcas(marca,TAMMA);
     hardcodearServicios(servicio,TAMS);
 
 
+
     while(seguir != 's'){
-        printf("\n 1-Alta notebook \n 2-Modificar notebook \n 3-Baja notebook \n 4-Listar notebook \n 5-Listar marcas \n 6-Listar tipos \n 7-Listar servicios \n 0-Salir \n\n\n");
+        printf("\n 1-Alta notebook \n 2-Modificar notebook \n 3-Baja notebook \n 4-Listar notebook \n 5-Listar marcas \n 6-Listar tipos \n 7-Listar servicios\n 8-Alta trabajo\n 9-Listar trabajo\n a- mostrar informes\n 0-Salir \n\n\n");
         fflush(stdin);
         scanf("%c",&seguir);
 
@@ -50,10 +57,10 @@ int main()
 
             case '2':
                 if (flag==1){
-                    printf("\nmodificar notbook\n\n");
+                    printf("\nmodificar notebook\n\n");
                     notebookModificar(notebook,TAMN,tipo,TAMT);
                 }else{
-                    printf("no se puede modificar sin dar alta una notbook\n");
+                    printf("no se puede modificar sin dar alta una notebook\n");
                 }
                 system("pause");
                 break;
@@ -74,7 +81,7 @@ int main()
                     notebookListarTodos(notebook,TAMN);
 
                 }else{
-                    printf("no se puede listar  agregar una notbook");
+                    printf("no se puede listar  agregar una notbook\n");
                 }
                     system("pause");
                 break;
@@ -97,6 +104,24 @@ int main()
                     printf("\nListar servicios\n\n");
                     serviciosListar(servicio,TAMS);
                 system("pause");
+                break;
+
+            case '8':
+
+                    printf("\nAlta trabajo\n\n");
+                    altaTrabajo(trabajo,TAMTR,notebook,TAMN,&idTrabajador);
+                system("pause");
+                break;
+
+            case '9':
+                    printf("\nListar trabajo\n\n");
+                    trabajoListar(trabajo,TAMTR);
+                system("pause");
+                break;
+
+            case 'b':
+                    printf("\n Contar marcas \n\n");
+                    mostrarInformes(notebook,TAMN,trabajo,TAMTR,servicio,TAMS);
                 break;
 
 
